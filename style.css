@@ -1,0 +1,322 @@
+/* Import fonts */
+@import url("http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900|Droid+Sans:400,700");
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/* Reset Styles */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+a {
+	text-decoration : none;
+	color : inherit;
+}
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Base Styles */
+
+.cf:before,
+.cf:after {
+	content: " "; 
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+  /*Set the overall style of the entire document - least to most spec, including all compatability tags*/
+html {
+	background-color : #8fc9b7;
+	background-image : -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8fc9b7), to(#4dc5ae));
+	background-image : -webkit-linear-gradient(top, #8fc9B7, #4dc5ae);
+	background-image : -moz-linear-gradient(top, #8fc9B7, #4dc5ae);
+	background-image : -o-linear-gradient(top, #8fc9B7, #4dc5ae);
+	min-height : 100%;
+	height: auto;
+}
+
+body {
+	font-family : Merriweather, serif;
+	font-size : 1.3rem;  /*LITTLE EXTRA LARGE FONT FOR READABILITY*/
+	line-height : 180%;	/*LITTLE EXTRA LINE SPACING FOR READABILITY*/
+	*zoom : 1;
+	color : #030807;
+}
+
+	/*MAIN STYLE FOR SECTION THAT CONTAINS ALL TEMPLATE VIEWS*/
+main {
+	background-color : #d6ddb3;
+	width: 80%;
+	min-width : 310px;
+	max-width : 720px;
+	margin : 0 auto;
+	padding : 10px 20px;
+	border-radius : 10px;
+	text-align : center;
+	-webkit-box-shadow : 0px 0px 6px 1px #ddd;
+	position : relative;
+	opacity : .95;
+}
+
+	/*STYLING FOR ALL INPUT BOXES - LOGIN AND REGISTER*/
+input {
+	border-radius : 6px;
+	display : inline-block;
+	width : 100%;
+	background : rgba(255,255,255,0.4);
+	padding : 10px 0px 10px 25px;
+	margin : 4px;
+	font-size : 1.2rem;
+	
+}
+
+
+
+	
+	/*CENTERING AND PRETTYFYING THE NAV BAR*/
+nav {
+	width : 100%;
+	background : #9fd98a;
+}
+
+nav .nav-table {
+	display : table;
+	margin : 0 auto;
+}
+
+nav ul {
+	width : 100%;
+	margin : 0 auto;
+}
+
+nav ul li {
+	float: left;
+	color : #030807;
+	font-family : Bree Serif, serif;
+
+}
+
+nav ul li a {
+	text-decoration : none;
+	float : left;
+	padding : 10px 20px;
+	font-size : 1.5rem;
+}
+
+nav ul li a:hover {
+	background-color : #4dc5ae;
+	color : #d9e25e;
+	border-radius : 10px;
+}
+
+	/*MORE FINE CONTROL OVER STYLES*/
+h1 {
+	color : inherit;
+	font-size : 2rem;
+}
+
+.loginregisterswap {
+	color : #4dc5ae;
+}
+
+.loginregisterswap:hover {
+	font-size : 1.7rem;
+}
+
+.welcome {
+	margin : 0 auto;
+	text-align: center;
+	font-size: 1.1rem;
+}
+
+
+  /*MESSAGE FORMATTING*/
+
+
+.messages, .photos {
+	padding-top : 10px;
+}
+
+
+.message {
+	background-color : rgba(247, 255, 207, 0.3);
+	border-radius : 10px;
+	-webkit-box-shadow : 0px 0px 4px 2px #d6ddb3;
+	margin-top : 5px;
+}
+
+.message .text {
+	padding-top : 7px;
+	padding-bottom : -4px;
+}
+
+.message .bywho {
+	font-size : .5rem;
+}
+
+.message .bywho #messageUser {
+	font-size : .9rem;
+	color : #327F71;
+}
+
+.error {
+	color : #FF53A3;
+}
+
+	/*BUTTON STYLING -- INCLUDING SOME ANGULAR STYLING (ng-invalid) --*/
+.btnLogin {
+	font-size : 1.4rem;
+	border-radius : 10px;
+	padding : 10px 20px;
+	background-color : rgba(159, 217, 138, 0.6);
+}
+
+.ng-valid .btnLogin:hover {
+	padding : 15px 30px;
+}
+
+.ng-invalid .btnLogin {
+	color : red;
+	font-size : .5rem;
+	opacity : .3;
+	background-color : #ddd;
+	
+}
+.ng-valid .btnMessage {
+	padding : 10px 20px;
+	font-size : 1.4rem;
+	border-radius : 10px;
+	background-color : rgba(159, 217, 138, 0.6);
+}
+
+.ng-invalid .btnMessage {
+	border-radius : 10px;
+	color : red;
+	font-size : .5rem;
+	opacity : .3;
+	background-color : #ddd;
+}
+
+.btnRemove {
+	border-radius : 10px;
+	background-color : rgba(255, 83, 163, .3);
+	margin-left : 50px;
+}
+
+.btnRemove:hover {
+	padding : 8px 16px;
+
+}
+
+.btnPhotoSubmit {
+	padding : 10px 20px;
+	font-size : 1.4rem;
+	border-radius : 10px;
+	background-color : rgba(159, 217, 138, 0.6);
+}
+
+  /*PHOTOS*/
+
+.photo img {
+	width : 90%;
+	border-radius : 10px;
+	margin : 0 auto;
+}
+
+.photo .photoContainer {
+	width: 90%;
+	background-color : rgba(247, 255, 207, 0.3);
+	border-radius : 10px;
+	-webkit-box-shadow : 0px 0px 4px 2px #d6ddb3;
+	padding-top : 2%;
+	margin : 0 auto;
+}
+
+.btnPhotoSubmit:hover {
+	padding : 15px 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

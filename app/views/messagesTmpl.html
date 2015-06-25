@@ -1,0 +1,32 @@
+<div class="messages">
+	
+
+
+	<!--VIEW AND REMOVE MESSAGES (ONLY IF LOGGED IN)-->
+	
+	<h1 ng-show="currentUser">Our Messages</h1>
+	<div class="message" ng-repeat="(key, message) in messages" ng-show="message && currentUser">
+		<p class="text"> {{ message.text }} </p>
+		<span class="bywho" ng-show="message"> said by <span id="messageUser"> {{message.firstname}}</span> </span>
+		<span class = "bywho" ng-show="message">on {{ message.date | date:"medium" }} </span>	
+		<span><button class="btnRemove" ng-click="removeMessage(key)">Remove Message</button></span>
+			</div>
+	
+		<!--CREATE NEW MESSAGE (ONLY IF LOGGED IN)-->
+	<form action="" class="formgroup addmessage " name="messageform"
+				ng-submit="addMessage()" ng-show="currentUser" novalidate>
+		<h1>Add Message</h1>
+		<div class="inputwrapper">
+			<input type="text" name="messageText" placeholder="Say Hi!"
+						 ng-model="messageText" ng-required="true"/>
+		</div>
+		<button ng-submit="addMessage()" type="submit" class="btnMessage" ng-disabled="messageform.$invalid">+</button>
+	</form>	
+	
+	<!--NOT LOGGED IN-->
+	<div class="notloggedin" ng-show="!currentUser">
+		<p>Please login to post or view messages!</p>
+		<span>Not a user? <a class="loginregisterswap" ng-href="#/register">Register </a> or <a class="loginregisterswap" ng-href="#/login">login </a>to access our messages!</span>
+	</div>
+	
+	

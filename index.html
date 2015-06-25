@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app='familyAlbum'>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<meta charset="utf-8" />
+		<title>Hughes Family Album</title>
+		<link href="style.css" rel="stylesheet" />
+	<body>
+		<div class="page">
+			<header>
+				<nav class="nav">
+					<div class="nav-table" ng-controller="statusCtrl">
+						<ul>
+							<li ng-show="!currentUser"><a ng-href="#/login" >Login</a> </li>
+							<li ng-show="!currentUser"><a ng-href="#/register" >Register</a> </li>
+							<li><a ng-href="#/photos">Photos</a></li>
+							<li><a ng-href="#/messages">Messages</a> </li>	
+							<li ng-show="currentUser" ng-click="logout()"><a>Logout</a></li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<div class="userinfo"
+					 ng-controller="statusCtrl" ng-show="currentUser">
+				
+				<div class="welcome">
+					<span>Hello, {{currentUser.firstname}}! </span>
+				</div>
+			</div>	
+			<main class="content" ng-view>
+		
+			</main>
+			
+
+		</div>
+		
+		
+	<!--ANGULAR-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.js"></script>
+		<!--Angular Extras-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/5.0.6/ng-file-upload-all.js"></script>
+		<script src="https://code.angularjs.org/1.3.16/angular-route.js"></script>
+		<!--FIREBASE-->
+		<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+		<script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
+		<!--APP FILES-->
+		<script src="app/app.js"></script>
+		<script src='app/controllers/registrationCtrl.js'></script>
+		<script src="app/controllers/messagesCtrl.js"></script>
+		<script src='app/controllers/photosCtrl.js'></script>
+		<script src="app/controllers/statusCtrl.js"></script>
+		<script src="app/services/imgService.js"></script>
+		<script src="app/services/previewFile.js"></script>
+		<script src="app/services/service.js"></script>
+		
+		
+	</body>
+</html>

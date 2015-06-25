@@ -1,0 +1,72 @@
+<div class="photos">
+	<div class="photowrapper" ng-show="currentUser">
+	<h1>Hughes' Photos</h1>
+	<p>Send VeeVee a picture!</p>
+	
+	<div class="photo" ng-repeat="(key, photo) in photos" ng-show="photo && currentUser">
+		<div class="photoContainer">
+			<img ng-src="{{photo.data}}" />
+			<p class="photoCaption"> {{ photo.caption }} </p>
+		</div>		
+		</div>
+	<!--
+	<h2>TODO</h2>
+	<ul>
+		<li>upload file (ng-file-upload repo?)</li>
+		<li>data structure for commenting on pictures</li>
+		<ul>
+			<li>object with image link and comment as propeties?</li>
+		</ul>
+		<li>make custom 'photo' directive with dimensions for photo and 
+				area to input and display new comments</li>
+		<li>choose file to upload
+			<li>add firebase object
+				<li>add data to object (who posted, when)
+		</li></li></li>
+
+	</ul>
+-->
+<!--	<h1>SandyboxSection</h1> -->
+		<!--TEST FOR INPUTBOX-->
+	<form>
+		<div class="fb-inputs">
+			<input class="btnPhotoSelect" type="file" onchange="previewFile()" ng-click="togglePreview()"/><br/>
+			<div ng-show="preview">
+				<button class="btnPhotoSubmit" onclick="uploadFile()" ng-click="togglePreview()">submit pic</button>
+				<img id="preview" src="" height="200" alt="image preview..." />
+				<input id="photoCaption" type="text" placeholder="say something about this photo" />
+			</div>
+		</div>
+	</form>
+	
+		
+		</div>
+	
+	</div>  <!--END PHOTOWRAPPER-->
+	
+	
+
+<div class="notloggedin" ng-show="!currentUser">
+	<p>Please login to view the photos!</p>
+			<span>Not a user? <a class="loginregisterswap" ng-href="#/register">Register </a> or <a class="loginregisterswap" ng-href="#/login">login </a>to access our photos!</span>
+
+</div>
+</div>
+
+<!--<script type="text/javascript">
+	var previewFile = function() {
+		var preview = document.querySelector('img');
+		var file = document.querySelector('input[file=type]').files[0];
+		var reader = new FileReader();
+		
+		reader.onloadend = function() {
+			preview.src = reader.result
+		}
+		if (file) {
+			reader.readAsDataURL(file);
+		} else {
+			preview.src = '';
+		}
+	}
+	
+</script>-->

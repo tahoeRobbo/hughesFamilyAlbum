@@ -1,0 +1,48 @@
+<div class="nav-table" ng-controller="RegistrationCtrl">
+	<ul>
+		<li ng-show="!currentUser"><a ng-href="#/login" >Login</a> </li>
+		<li ng-show="!currentUser"><a ng-href="#/register" >Register</a> </li>
+		<li><a ng-href="#/photos">Photos</a></li>
+		<li><a ng-href="#/messages">Messages</a> </li>	
+		<li ng-show="currentUser" ng-click="logout()"><a>Logout</a></li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--ExAMPLE UPLOADING IMAGE TO FIREBASE-->
+<!--
+function handleFileSelect(evt) {
+  var f = evt.target.files[0]; // 
+  var reader = new FileReader();
+  reader.onload = (function(theFile) {
+    return function(e) { // e represents the event in this case the load
+      var filePayload = e.target.result;
+      // Generate a location that can't be guessed using the file's contents and a random number
+      var hash = CryptoJS.SHA256(Math.random() + CryptoJS.SHA256(filePayload));
+      var f = new Firebase(firebaseRef + 'pano/' + hash + '/filePayload');
+      spinner.spin(document.getElementById('spin'));
+      // Set the file payload to Firebase and register an onComplete handler to stop the spinner and show the preview
+      f.set(filePayload, function() { 
+        spinner.stop();
+        document.getElementById("pano").src = e.target.result;
+        $('#file-upload').hide();
+        // Update the location bar so the URL can be shared with others
+        window.location.hash = hash;
+      });
+    };
+  })(f); // f represents the file itself because iife ** the function after the load
+  reader.readAsDataURL(f);
+}
+-->

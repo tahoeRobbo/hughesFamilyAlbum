@@ -26,5 +26,7 @@ app.controller('RegistrationCtrl', function($scope, service, FIREBASE_URL, $fire
 		})
 	} // Register Ctrl
 	
-	
-})
+	$scope.logout = function(){
+		service.logout;
+	};
+});

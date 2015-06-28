@@ -73,3 +73,4 @@ app.service('service', function($location, $firebaseAuth, FIREBASE_URL, $routePa
 	}
 	
 })
+

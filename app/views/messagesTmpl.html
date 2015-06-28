@@ -13,15 +13,15 @@
 			</div>
 	
 		<!--CREATE NEW MESSAGE (ONLY IF LOGGED IN)-->
-	<form action="" class="formgroup addmessage " name="messageform"
-				ng-submit="addMessage()" ng-show="currentUser" novalidate>
+	<form class="formgroup addmessage " name="messageform"
+			 ng-show="currentUser" novalidate>
 		<h1>Add Message</h1>
 		<div class="inputwrapper">
 			<input type="text" name="messageText" placeholder="Say Hi!"
 						 ng-model="messageText" ng-required="true"/>
 		</div>
-		<button ng-submit="addMessage()" type="submit" class="btnMessage" ng-disabled="messageform.$invalid">+</button>
-	</form>	
+		<button type="submit" class="btnMessage" ng-click="addMessage()" ng-disabled="messageform.$invalid">+</button>
+	</ form>	
 	
 	<!--NOT LOGGED IN-->
 	<div class="notloggedin" ng-show="!currentUser">

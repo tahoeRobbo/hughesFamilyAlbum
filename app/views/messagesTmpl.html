@@ -8,6 +8,7 @@
 	<div class="message" ng-repeat="(key, message) in messages | filter:filterBy" ng-show="message && currentUser">
 		<p class="text"> {{ message.text }} </p>
 		<span class="bywho" ng-show="message"> said by <span id="messageUser"> {{message.firstname}}</span> </span>
+		<span></span>
 		<span class = "bywho" ng-show="message">on {{ message.date | date:"medium" }} </span>	
 		<span><button class="btnRemove" ng-click="removeMessage(key)">Remove Message</button></span>
 			</div>
@@ -20,7 +21,7 @@
 			<input type="text" name="messageText" placeholder="Say Hi!"
 						 ng-model="messageText" ng-required="true"/>
 		</div>
-		<input type="text" ng-model="filterBy.firstname" placeholder="filter by family member"/>
+		<input type="text" ng-model="filterBy.name" placeholder="filter by family member"/>
 		<button type="submit" class="btnMessage" ng-click="addMessage()" ng-disabled="messageform.$invalid">+</button>
 	</ form>	
 	

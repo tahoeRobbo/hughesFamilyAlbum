@@ -10,7 +10,8 @@ app.controller('messagesCtrl', function($scope, service, $firebaseArray, FIREBAS
 		var messageObj = {
 			text: $scope.messageText,
 			date : Firebase.ServerValue.TIMESTAMP,
-			firstname : $rootScope.currentUser.firstname
+			firstname : $rootScope.currentUser.firstname,
+			lastname : $rootScope.currentUser.lastname
 		};
 		messages.$add(messageObj).then(function() { 
 			console.log('AND THEN')

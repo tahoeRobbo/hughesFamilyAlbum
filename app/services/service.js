@@ -40,6 +40,7 @@ app.service('service', function($location, $firebaseAuth, FIREBASE_URL, $routePa
 			firebaseUsers.firstname = user.firstname,
 			firebaseUsers.lastname = user.lastname,
 			firebaseUsers.email = user.email,
+			firebaseUsers.name = user.firstname+ ' ' + user.lastname
 			
 			firebaseUsers.$save()
 		});// 'and then' promise

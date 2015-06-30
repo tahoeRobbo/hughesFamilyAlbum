@@ -22,6 +22,6 @@ app.config(function($routeProvider) {
 		templateUrl : 'app/views/photosTmpl.html',
 		controller : 'photosCtrl'
 	})
-	.otherwise('/photos')
-})
+	.otherwise('/photos');
+});
 

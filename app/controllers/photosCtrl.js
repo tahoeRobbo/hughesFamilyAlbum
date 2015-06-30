@@ -1,8 +1,8 @@
 var app = angular.module('familyAlbum');
 
-app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, service, $rootScope, Upload){
+app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, service, $rootScope, $firebaseArray){
 	var imgRef = new Firebase(FIREBASE_URL + 'photos/');
-	var photos = $firebaseObject(imgRef);
+	var photos = $firebaseArray(imgRef);
 	$scope.photos = photos;
 	$scope.preview = false;
 /*	$scope.addPhoto = function() {
@@ -53,7 +53,12 @@ app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, ser
 	};
 	
 	$scope.test = "Linked from photosCtrl";
-}) // photosCtrl
+	
+	$scope.removePhoto = function(key) {
+		photos.$remove(key);
+	};
+}); // photosCtrl
+
 
 
 

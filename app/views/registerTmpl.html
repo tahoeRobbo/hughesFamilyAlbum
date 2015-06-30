@@ -2,7 +2,7 @@
 	<form name="loginForm" ng-submit="register()" novalidate>
 		<h1>Almost there!</h1>
 		<p>Please register to access our album</p> 
-		<p class="error formerror" ng-show(message)> {{message}} </p>
+		<p class="error formerror" ng-show="message"> {{message}} </p>
 		
 		<input type="firstname" name="firstname" placeholder="First Name" autofocus 
 					 ng-model="user.firstname" ng-required="true"/>

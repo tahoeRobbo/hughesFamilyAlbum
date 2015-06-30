@@ -2,13 +2,15 @@
 	<div class="photowrapper" ng-show="currentUser">
 	<h1>Hughes' Photos</h1>
 	<p>Send VeeVee a picture!</p>
-	
+	</div>
 	<div class="photo" ng-repeat="(key, photo) in photos" ng-show="photo && currentUser">
 		<div class="photoContainer">
 			<img ng-src="{{photo.data}}" />
 			<p class="photoCaption"> {{ photo.caption }} </p>
+			<button class="btnRemove" ng-click="removePhoto(key)">Remove Photo</button>
+			</div>
 		</div>		
-		</div>
+		
 	<!--
 	<h2>TODO</h2>
 	<ul>

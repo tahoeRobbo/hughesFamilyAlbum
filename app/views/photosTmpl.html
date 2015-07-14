@@ -3,13 +3,24 @@
 	<h1>Hughes' Photos</h1>
 	<p>Send VeeVee a picture!</p>
 	</div>
-	<div class="photo" ng-repeat="(key, photo) in photos" ng-show="photo && currentUser">
+	<div class="pics-loaded">Pictures Loaded: {{scrollItems.length}}</div>
+	
+
+	
+	
+	<div class="photo" ng-repeat="(key, photo) in scrollItems" ng-show="photo && currentUser">
 		<div class="photoContainer">
 			<img ng-src="{{photo.data}}" />
 			<p class="photoCaption"> {{ photo.caption }} </p>
 			<button class="btnRemove" ng-click="removePhoto(key)">Remove Photo</button>
 			</div>
 		</div>		
+		
+			<!--BUTTON TO LOAD PICTURES-->
+	
+	<p>
+		<button class="btn" ng-click="scrollItems.scroll.next(6)" ng-disabled="!scrollItems.scroll.hasNext()">Load next 6</button>
+	</p>
 		
 	<!--
 	<h2>TODO</h2>
@@ -34,7 +45,9 @@
 		<div class="fb-inputs">
 			<input class="btnPhotoSelect" type="file" onchange="previewFile()" ng-click="togglePreview()"/><br/>
 			<div ng-show="preview">
-				<button class="btnPhotoSubmit" onclick="uploadFile()" ng-click="togglePreview()">submit pic</button>
+				<button class="btnPhotoSubmit" onclick="uploadFile()" ng-click="togglePreview()">
+				submit pic
+				</button>
 				<img id="preview" src="" height="200" alt="image preview..." />
 				<input id="photoCaption" type="text" placeholder="say something about this photo" />
 			</div>

@@ -32,6 +32,7 @@ var uploadFile = function() {
 		imgRef.push({
 			data : reader.result,
 			caption : inputCaption,
+			createdAt : (Date.now() * -1)
 		});
 		document.querySelector('#photoCaption').value = '';
 	}

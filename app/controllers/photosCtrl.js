@@ -1,6 +1,6 @@
 var app = angular.module('familyAlbum');
 
-app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, service, $rootScope, $firebaseArray){
+app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, service, $rootScope, $firebaseArray, scrollService){
 	var imgRef = new Firebase(FIREBASE_URL + 'photos/');
 	var photos = $firebaseArray(imgRef);
 	$scope.photos = photos;
@@ -16,6 +16,8 @@ app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, ser
 		photos.$save();
 	}*/
 
+	//Paginate responses from imgRef -- choose to limit by number
+	$scope.scrollItems = scrollService.scrollArray(imgRef, 'createdAt');
 
 	
 	$scope.togglePreview = function() {

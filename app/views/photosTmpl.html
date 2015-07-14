@@ -30,7 +30,7 @@
 -->
 <!--	<h1>SandyboxSection</h1> -->
 		<!--TEST FOR INPUTBOX-->
-	<form>
+	<form ng-show="currentUser">
 		<div class="fb-inputs">
 			<input class="btnPhotoSelect" type="file" onchange="previewFile()" ng-click="togglePreview()"/><br/>
 			<div ng-show="preview">
@@ -43,8 +43,7 @@
 	
 		
 		</div>
-	
-	</div>  <!--END PHOTOWRAPPER-->
+  <!--END PHOTOWRAPPER-->
 	
 	
 
@@ -53,7 +52,7 @@
 			<span>Not a user? <a class="loginregisterswap" ng-href="#/register">Register </a> or <a class="loginregisterswap" ng-href="#/login">login </a>to access our photos!</span>
 
 </div>
-</div>
+
 
 <!--<script type="text/javascript">
 	var previewFile = function() {

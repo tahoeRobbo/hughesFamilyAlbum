@@ -15,38 +15,8 @@ app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, ser
 		photos.text = "test text, the function did fire";
 		photos.$save();
 	}*/
-	
-/*	$scope.addPhoto = function(photo) {
-		console.log(photo)2
-		console.log($scope.photo)
-		photos.Photo = {
-//			title : $scope.photo.filename,
-			date : Firebase.ServerValue.TIMESTAMP,
-			firstname : $rootScope.currentUser.firstname,
-			lastname : $rootScope.currentUser.lastname,
-			email : $rootScope.currentUser.email,
-//			image : $scope.photo.data,
-		}
-		
-		photos.$save();
-	}
-	*/
-	//DOESNT NOT WORK WITH NG-MODEL / NG-CLICK!!  TRYING TO READ INPUT FILE OUTSIDE OF JS, STORE AS GLOBAL VARIABLE
-	/*$scope.previewFile = function() {
-		var preview = document.querySelector('img');
-		var file = $scope.picInput;
-		var reader = new FileReader();
-		
-		reader.onloadend = function() {
-			preview.src = reader.result;
-		}
-		
-		if(file) {
-			reader.readDataAsURL(file);
-		} else {
-			preview.src = '';
-		}
-	};*/
+
+
 	
 	$scope.togglePreview = function() {
 		$scope.preview = !$scope.preview;

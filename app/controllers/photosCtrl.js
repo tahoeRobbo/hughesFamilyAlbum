@@ -17,7 +17,7 @@ app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, ser
 	}*/
 
 	//Paginate responses from imgRef -- choose to limit by number
-	$scope.scrollItems = scrollService.scrollArray(imgRef, 'createdAt');
+	$scope.scrollItems = scrollService.picScrollArray(imgRef, 'createdAt');
 
 	
 	$scope.togglePreview = function() {
@@ -27,7 +27,7 @@ app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, ser
 	$scope.test = "Linked from photosCtrl";
 	
 	$scope.removePhoto = function(key) {
-		photos.$remove(key);
+		$scope.scrollItems.$remove(key);
 	};
 }); // photosCtrl
 

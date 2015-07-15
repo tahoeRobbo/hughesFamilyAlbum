@@ -1,4 +1,4 @@
-<div class="photos">
+<div class="photos" ng-init="scrollItems.scroll.next(3)" ng-show="currentUser">
 	<div class="photowrapper" ng-show="currentUser">
 	<h1>Hughes' Photos</h1>
 	<p>Send VeeVee a picture!</p>
@@ -11,8 +11,9 @@
 	<div class="photo" ng-repeat="(key, photo) in scrollItems" ng-show="photo && currentUser">
 		<div class="photoContainer">
 			<img ng-src="{{photo.data}}" />
-			<p class="photoCaption"> {{ photo.caption }} </p>
-			<button class="btnRemove" ng-click="removePhoto(key)">Remove Photo</button>
+			<p class="photoCaption"> {{ photo.caption }}
+				<button class="btnRemove" ng-click="removePhoto(key)">Remove Photo</button> </p>
+
 			</div>
 		</div>		
 		

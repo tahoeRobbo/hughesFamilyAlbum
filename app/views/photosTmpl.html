@@ -1,15 +1,30 @@
-<div class="photos">
+<div class="photos" ng-init="scrollItems.scroll.next(3)" ng-show="currentUser">
 	<div class="photowrapper" ng-show="currentUser">
 	<h1>Hughes' Photos</h1>
 	<p>Send VeeVee a picture!</p>
 	</div>
-	<div class="photo" ng-repeat="(key, photo) in photos" ng-show="photo && currentUser">
+<!--	<div class="pics-loaded">Pictures Loaded: {{scrollItems.length}}</div>-->
+	
+
+	
+	
+	<div class="photo" ng-repeat="(key, photo) in scrollItems" ng-show="photo && currentUser">
 		<div class="photoContainer">
+				<button class="btnRemove" ng-click="showDeleteDropdown(key)">Remove Photo</button>
+			<div class="are-you-sure" ng-show="deletePhotoDropdown && (confirmKey === key)" >Are you sure you want to delete this photo?
+				<div><button class="confirm-delete" ng-click="removePhoto(key)">Yes, Delete Picture</button><span><button class="cancel-delete" ng-click="cancelDeletePhoto()">No Thanks</button></span></div>
+			</div>
 			<img ng-src="{{photo.data}}" />
-			<p class="photoCaption"> {{ photo.caption }} </p>
-			<button class="btnRemove" ng-click="removePhoto(key)">Remove Photo</button>
+			<p class="photoCaption"> {{ photo.caption }}
+		  </p>
 			</div>
 		</div>		
+		
+			<!--BUTTON TO LOAD PICTURES-->
+	
+	<p>
+		<button class="load-more" ng-click="scrollItems.scroll.next(6)" ng-disabled="!scrollItems.scroll.hasNext()">Load next 6</button>
+	</p>
 		
 	<!--
 	<h2>TODO</h2>
@@ -30,11 +45,13 @@
 -->
 <!--	<h1>SandyboxSection</h1> -->
 		<!--TEST FOR INPUTBOX-->
-	<form>
+	<form ng-show="currentUser">
 		<div class="fb-inputs">
 			<input class="btnPhotoSelect" type="file" onchange="previewFile()" ng-click="togglePreview()"/><br/>
 			<div ng-show="preview">
-				<button class="btnPhotoSubmit" onclick="uploadFile()" ng-click="togglePreview()">submit pic</button>
+				<button class="btnPhotoSubmit" onclick="uploadFile()" ng-click="togglePreview()">
+				submit pic
+				</button>
 				<img id="preview" src="" height="200" alt="image preview..." />
 				<input id="photoCaption" type="text" placeholder="say something about this photo" />
 			</div>
@@ -43,8 +60,7 @@
 	
 		
 		</div>
-	
-	</div>  <!--END PHOTOWRAPPER-->
+  <!--END PHOTOWRAPPER-->
 	
 	
 
@@ -53,7 +69,7 @@
 			<span>Not a user? <a class="loginregisterswap" ng-href="#/register">Register </a> or <a class="loginregisterswap" ng-href="#/login">login </a>to access our photos!</span>
 
 </div>
-</div>
+
 
 <!--<script type="text/javascript">
 	var previewFile = function() {

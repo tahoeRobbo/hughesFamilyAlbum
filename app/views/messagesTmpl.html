@@ -21,12 +21,13 @@
 			<input type="text" name="messageText" placeholder="Say Hi!"
 						 ng-model="messageText" ng-required="true"/>
 		</div>
-		<input type="text" ng-model="filterBy.name" placeholder="filter by family member"/>
+<!--		<input type="text" ng-model="filterBy.name" placeholder="filter by family member"/>-->
 		<button type="submit" class="btnMessage" ng-click="addMessage()" ng-disabled="messageform.$invalid">+</button>
-	</ form>	
+	</form>	
 	
 	<!--NOT LOGGED IN-->
 	<div class="notloggedin" ng-show="!currentUser">
 		<p>Please login to post or view messages!</p>
 		<span>Not a user? <a class="loginregisterswap" ng-href="#/register">Register </a> or <a class="loginregisterswap" ng-href="#/login">login </a>to access our messages!</span>
-	r
+	</div>
+</div>

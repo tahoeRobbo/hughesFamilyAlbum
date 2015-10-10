@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html ng-app='familyAlbum'>
+<html ng-app="familyAlbum">
 	<head>
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<meta charset="utf-8" />
 		<title>Hughes Family Album</title>
 		<link href="style.css" rel="stylesheet" />
+	</head>
 	<body>
 		<div class="page">
 			<header>
@@ -42,15 +43,23 @@
 		<script src="https://code.angularjs.org/1.3.16/angular-route.js"></script>
 		<!--FIREBASE-->
 		<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+		<script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/firebase-util/0.2.4/firebase-util.min.js"></script>
+<script>
+    Firebase.util.logLevel('log');
+    Firebase.util.log('hello world');
+</script>		
+
 		<script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
 		<!--APP FILES-->
 		<script src="app/app.js"></script>
-		<script src='app/controllers/registrationCtrl.js'></script>
+		<script src="app/controllers/registrationCtrl.js"></script>
 		<script src="app/controllers/messagesCtrl.js"></script>
-		<script src='app/controllers/photosCtrl.js'></script>
+		<script src="app/controllers/photosCtrl.js"></script>
 		<script src="app/controllers/statusCtrl.js"></script>
 		<script src="app/services/imgService.js"></script>
 		<script src="app/services/previewFile.js"></script>
+		<script src="app/services/scrollService.js"></script>
 		<script src="app/services/service.js"></script>
 		
 		

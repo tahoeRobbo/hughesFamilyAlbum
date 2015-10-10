@@ -40,7 +40,6 @@ app.controller('photosCtrl', function($scope, $firebaseObject, FIREBASE_URL, ser
 	$scope.removePhoto = function(key) {
 		$scope.scrollItems.$remove(key);
 		$scope.deletePhotoDropdown = false;
-
 	};
 }); // photosCtrl
 

@@ -3,7 +3,9 @@
 	<h1>Hughes' Photos</h1>
 	<p>Send VeeVee a picture!</p>
 	</div>
+
 <!--	<div class="pics-loaded">Pictures Loaded: {{scrollItems.length}}</div>-->
+
 	
 
 	
@@ -16,14 +18,18 @@
 			</div>
 			<img ng-src="{{photo.data}}" />
 			<p class="photoCaption"> {{ photo.caption }}
+
 		  </p>
-			</div>
+
+
 		</div>		
 		
 			<!--BUTTON TO LOAD PICTURES-->
 	
 	<p>
+
 		<button class="load-more" ng-click="scrollItems.scroll.next(6)" ng-disabled="!scrollItems.scroll.hasNext()">Load next 6</button>
+
 	</p>
 		
 	<!--
